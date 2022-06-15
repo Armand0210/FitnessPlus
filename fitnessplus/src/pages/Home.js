@@ -6,11 +6,22 @@ import Exercises from '../components/Exercises';
 
 
 const Home = () => {
+  //changes in these state will reflect all across application
+  const [exercises, setExercises] = useState([]);
+  const [bodyPart, setBodyPart] = useState('all');
+
+
   return (
     <Box>
       <HeroBanner />
-      <SearchExercises />
-      <Exercises />
+      <SearchExercises 
+      setExercises={setExercises} 
+      bodyPart={bodyPart} 
+      setBodyPart={setBodyPart} />
+      <Exercises 
+      setExercises={setExercises} 
+      bodyPart={bodyPart} 
+      setBodyPart={setBodyPart} />
     </Box>
   )
 }
