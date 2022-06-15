@@ -6,12 +6,21 @@ import { exerciseOptions, fetchData } from '../utils/fetchData';
 
 const SearchExercises = () => {
 
-  const [search, setSearch] = useState('')
+  const [search, setSearch] = useState('');
+  const [exercises, setExercises] = useState('');
   //async func to pull data
   const handleSearch = async() => {
     if(search){
       const exercisesData = await fetchData('https://exercisedb.p.rapidapi.com/exercises/bodyPartList', exerciseOptions);
-      console.log(exercisesData);
+      const searchedExercises = exercisesData.filter(
+        (exercise) => exercise.bodyPart.toLowerCase().includes(search)
+        ||exercise.name.toLowerCase().includes(search)
+        ||exercise.target.toLowerCase().includes(search)
+        ||exercise.equipment.toLowerCase().includes(search)
+      );
+
+      setSearch('');
+      setExercises(searchedExercises)
     }
   }
 
