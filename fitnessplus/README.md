@@ -1,4 +1,5 @@
-# FitnessPlus
-Fitness Application with workouts made in react + Api's
+# React Fitness Application
 
-Made with react + rapid api's
+![React Fitness Application](https://i.ibb.co/Yt9spGc/image.png)
+
+## Launch your development career with project-based coaching - https://www.jsmastery.pro
